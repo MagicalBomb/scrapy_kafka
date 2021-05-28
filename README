@@ -1,0 +1,15 @@
+## 说明
+
+参考知名 scrapy_redis 项目，衍生而出的 scrapy_kafka。
+
+本项目实现了类似于 RedisSpider 的 KafkaSpider。
+
+只需要继承 KafkaSpider，就可以从 Kafka 的指定 Topic 中获取数据作为 Scrapy Spider 的 start urls。
+
+
+## 使用方法
+
+1. 将 src/spiders 下的 kafkaspider 拷贝到您自己的 Scrapy 项目目录下的 spiders 文件夹中
+2. 使您自己的爬虫继承 KafkaSpider，并填写相关参数
+3. 继承自 KafkaSpider 的子类必须实现 make_request_from_data
+4. 运行爬虫
